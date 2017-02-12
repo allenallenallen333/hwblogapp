@@ -44,7 +44,7 @@ public class SignBlogServlet extends HttpServlet{
         ofy().save().entity(pst);
         
         // Problem
-        resp.sendRedirect("/????????.jsp");
+        resp.sendRedirect("/index.jsp");
 
     }
 }
