@@ -1,3 +1,57 @@
+<<<<<<< HEAD
+
+/* main body appearance */
+=======
+>>>>>>> branch 'master' of https://github.com/allenallenallen333/hwblogapp.git
 body {
+	background: #e5e5e5;
+	color: #232323;
+}
+
+
+/* link appearances */
+a {
+	
+}
+
+a:hover {
+	
+}
+
+a:visited {
 
 }
+
+
+/* text formatting  */
+
+b {
+
+}
+
+i {
+
+}
+
+s {
+
+}
+
+u {
+
+}
+
+/* headers */
+
+h1 { /* used for blog title */
+
+}
+
+h2 { /* used for post titles */
+
+}
+
+h3 { /* used for post sub titles */
+
+}
+
