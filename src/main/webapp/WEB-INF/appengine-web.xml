@@ -3,5 +3,7 @@
 
   <threadsafe>true</threadsafe>
   <sessions-enabled>false</sessions-enabled>
+  <application>hwblogapp</application>
+  <version>1</version>
 
 </appengine-web-app>
