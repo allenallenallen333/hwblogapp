@@ -42,5 +42,6 @@ public class SignBlogServlet extends HttpServlet{
         // Problem - redirect to permalink page of this new post
         resp.sendRedirect("/????????.jsp");
 
+
     }
 }
