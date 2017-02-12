@@ -78,9 +78,10 @@ if (postings.isEmpty()) {
 
     for (Posting posting : postings) {
 
-        pageContext.setAttribute("greeting_content",
-
-                                 posting.getContent());
+    	pageContext.setAttribute("greeting_title", posting.getTitle());
+    	
+    	
+        pageContext.setAttribute("greeting_content", posting.getContent());
 
         if (posting.getUser() == null) {
 
@@ -92,9 +93,7 @@ if (postings.isEmpty()) {
 
         } else {
 
-            pageContext.setAttribute("greeting_user",
-
-                                     posting.getUser());
+            pageContext.setAttribute("greeting_user", posting.getUser());
 
             %>
 
@@ -127,8 +126,6 @@ if (postings.isEmpty()) {
       <div><textarea name="content" rows="3" cols="60"></textarea></div>
 
       <div><input type="submit" value="Post it!" /></div>
-
-      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
 
     </form>
     <%
