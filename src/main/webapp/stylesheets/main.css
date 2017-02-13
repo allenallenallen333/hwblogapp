@@ -1,57 +1,47 @@
-<<<<<<< HEAD
-
 /* main body appearance */
-=======
->>>>>>> branch 'master' of https://github.com/allenallenallen333/hwblogapp.git
 body {
 	background: #e5e5e5;
 	color: #232323;
+	font: 15px arial, sans-serif;
 }
 
+.header {
+	background: white;
+	padding: 10px;
+}
+
+.header a {	
+	margin-left: 15px;
+	margin-right: 15px;
+}
 
 /* link appearances */
-a {
-	
-}
+a { color: #83dae3; }
 
 a:hover {
-	
+	color: #12b2c2;
+	border-bottom: 1px dotted #12b2c2;
 }
 
 a:visited {
-
+	color: #878787;
 }
 
+/* formats the post display */
 
-/* text formatting  */
-
-b {
-
+.post {
+	background: white;
+	margin: auto;
+	width: 500px;
+	padding: 20px;
+	box-shadow: 10px 10px rgba(0, 0, 0, .4);
 }
 
-i {
-
+.post h1 {
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-variant: small-caps;
 }
 
-s {
-
-}
-
-u {
-
-}
-
-/* headers */
-
-h1 { /* used for blog title */
-
-}
-
-h2 { /* used for post titles */
-
-}
-
-h3 { /* used for post sub titles */
-
-}
 

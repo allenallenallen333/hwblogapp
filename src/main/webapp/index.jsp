@@ -15,6 +15,12 @@
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
  </head>
   <body>
+  
+  <div class="header">
+  
+  <a href="">Subscribe</a>
+  
+  
 <%
 
     UserService userService = UserServiceFactory.getUserService();
@@ -22,37 +28,24 @@
     User user = userService.getCurrentUser();
 
     if (user != null) {
-
-      pageContext.setAttribute("user", user);
-
 %>
 
-<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
-
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+		<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">Sign Out</a> 
+		<a href="">+ Post</a>
 
 <%
-
     } else {
-
 %>
-
-<p>Hello!
 
 <a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
 
-to create your blog post.</p>
-
 <%
-
     }
-
 %>
 
- 
+ </div>
 
 <%
-
 
 ObjectifyService.register(Posting.class);
 
@@ -62,59 +55,29 @@ Collections.sort(postings);
 
 if (postings.isEmpty()) {
 
-    %>
+%>
 
     <p>This blog has no posts.</p>
 
-    <%
-
+<%
 } else {
-
-    %>
-
-    <p>Available blog posts.</p>
-
-    <%
-
     for (Posting posting : postings) {
-
-        pageContext.setAttribute("greeting_content",
-
-                                 posting.getContent());
-
-        if (posting.getUser() == null) {
-
-            %>
-
-            <p>An anonymous person wrote:</p>
-
-            <%
-
-        } else {
-
-            pageContext.setAttribute("greeting_user",
-
-                                     posting.getUser());
-
-            %>
-
-            <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
-
-            <%
-
-        }
-
-        %>
-
-		<blockquote>${fn:escapeXml(greeting_title)}</blockquote>
-        <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-
-        <%
-
+        pageContext.setAttribute("greeting_content", posting.getContent());
+		pageContext.setAttribute("greeting_user", posting.getUser());
+		
+%>
+		<div class="post">
+		
+		<h1>${fn:escapeXml(greeting_title)}</h1>
+		<p>${fn:escapeXml(greeting_content)}</p>
+		<hr>
+		<p align="right">Posted by <b>${fn:escapeXml(greeting_user.nickname)}</b> at </p>
+		
+		</div>
+        
+<%
+    	}
     }
-
-}
-
 %>
 
 <%
@@ -123,12 +86,15 @@ if (postings.isEmpty()) {
  	%>
  	<form action="/sign" method="post">
 
-	  <div><textarea name="title" rows="1" cols="60"></textarea></div>
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+	  <div>
+	  
+	  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
+	  <br> <br>
+      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
 
-      <div><input type="submit" value="Post it!" /></div>
-
-      <input type="hidden" name="guestbookName" value="${fn:escapeXml(guestbookName)}"/>
+      <input type="submit" value="Submit" />
+      
+      </div>
 
     </form>
     <%
