@@ -26,7 +26,8 @@
    		 	if (user != null) {
 		%>
 			<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
-			<a href="/newpost" class="postbtn">+Post</a>
+			<!--<a href="/newpost" class="postbtn">+Post</a> -->			
+			
 		<%
     		} else {
 		%>
@@ -58,6 +59,22 @@
 		</div>
 
 		<div class="separate"></div>
+		
+		
+		<form action="/sign" method="post">
+
+	  <div>
+	  
+	  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
+	  <br> <br>
+      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
+
+      <input type="submit" value="Submit" />
+      
+      </div>
+
+    </form>
+		
 
 		<ul class="posts">
 

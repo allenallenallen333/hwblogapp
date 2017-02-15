@@ -8,9 +8,9 @@
 
 	  <div>
 	  
-	  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
+	  <textarea name="title" placeholder="Post Title" rows="1"></textarea> 
 	  <br> <br>
-      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
+      <textarea name="content" placeholder="Share your thoughts..." rows="10"></textarea>
 
       <input type="submit" value="Submit" />
       
