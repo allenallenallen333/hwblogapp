@@ -57,10 +57,10 @@
           
       		</div>
 		</div>
-
 		<div class="separate"></div>
-		
-		
+
+<ul  class="posts">
+<li class="post" style="min-height: 104px">
 		<form action="/sign" method="post">
 
 	  <div>
@@ -74,8 +74,10 @@
       </div>
 
     </form>
-		
+    </li>
+</ul>
 
+		<div class="separate"></div>
 		<ul class="posts">
 
 	<%
@@ -136,6 +138,7 @@
      			Katya Malyavina <br>
      			Allen Yang
      		</div>
-
+</div>
+</div>
   </body>
  </html>
