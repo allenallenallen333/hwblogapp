@@ -8,8 +8,8 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 <servlet>
-<servlet-name>GAEJCronServlet</servlet-name>
-<servlet-class>com.gaejexperiments.cron.GAEJCronServlet</servlet-class>
+<servlet-name>SubscribeServlet</servlet-name>
+<servlet-class>blog.SubscribeServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 <servlet-name>SubscribeServlet</servlet-name>
