@@ -59,26 +59,26 @@
 		</div>
 		<div class="separate"></div>
 
-<% 
-if (user != null) {
-%>
-<ul  class="posts">
-<li class="post" style="min-height: 104px">
-		<form action="/sign" method="post">
-
-	  <div>
-	  
-	  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
-	  <br> <br>
-      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
-
-      <input type="submit" value="Submit" />
-      
-      </div>
-
-    </form>
-    </li>
-</ul>
+		<% 
+		if (user != null) {
+		%>
+		<ul  class="posts">
+		<li class="post" style="min-height: 104px">
+				<form action="/sign" method="post">
+		
+			  <div>
+			  
+			  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
+			  <br> <br>
+		      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
+		
+		      <input type="submit" value="Submit" />
+		      
+		      </div>
+		
+		    </form>
+		    </li>
+		</ul>
 
 		<div class="separate"></div>
 		
