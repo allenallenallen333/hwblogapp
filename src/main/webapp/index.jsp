@@ -9,7 +9,6 @@
 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
- 
 <html>
   <head>
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
@@ -49,11 +48,25 @@ to create your blog post.</p>
 
 %>
 
+
+<%
+ if (user != null) {
+ 
+ 	%>
+ 	<form action="/sign" method="post">
+
+	  <div><textarea name="title" rows="1" cols="60"></textarea></div>
+      <div><textarea name="content" rows="3" cols="60"></textarea></div>
+
+      <div><input type="submit" value="Post it!" /></div>
+
+    </form>
+    <%
+}
+%>
  
 
 <%
-
-
 ObjectifyService.register(Posting.class);
 
 List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
@@ -114,22 +127,6 @@ if (postings.isEmpty()) {
 
 }
 
-%>
-
-<%
- if (user != null) {
- 
- 	%>
- 	<form action="/sign" method="post">
-
-	  <div><textarea name="title" rows="1" cols="60"></textarea></div>
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-
-      <div><input type="submit" value="Post it!" /></div>
-
-    </form>
-    <%
-}
 %>
     
 
