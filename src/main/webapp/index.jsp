@@ -118,7 +118,5 @@
      			Allen Yang
      		</div>
 
-	</div>
-
   </body>
  </html>
