@@ -59,6 +59,9 @@
 		</div>
 		<div class="separate"></div>
 
+<% 
+if (user != null) {
+%>
 <ul  class="posts">
 <li class="post" style="min-height: 104px">
 		<form action="/sign" method="post">
@@ -78,6 +81,11 @@
 </ul>
 
 		<div class="separate"></div>
+		
+<%
+} 
+%>
+		
 		<ul class="posts">
 
 	<%

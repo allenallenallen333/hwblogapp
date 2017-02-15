@@ -40,7 +40,7 @@ public class SignBlogServlet extends HttpServlet{
         ofy().save().entity(pst);
         
         // Problem - redirect to permalink page of this new post
-        resp.sendRedirect("/????????.jsp");
+        resp.sendRedirect("/index.jsp");
 
 
     }
