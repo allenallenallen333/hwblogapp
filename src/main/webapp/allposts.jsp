@@ -101,21 +101,13 @@ if (user != null) {
     	
 	<%
 		} else {
-			/*
+
 		    for (Posting posting : postings) {
 		    	pageContext.setAttribute("greeting_title", posting.getTitle());
 		        pageContext.setAttribute("greeting_content", posting.getContent());
 				pageContext.setAttribute("greeting_user", posting.getUser());	
 				pageContext.setAttribute("greeting_date", posting.getDate());
-				*/
-				
-			int i = 0;
-			while(i < 3 && i < postings.size()){
-				pageContext.setAttribute("greeting_title", postings.get(i).getTitle());
-		        pageContext.setAttribute("greeting_content", postings.get(i).getContent());
-				pageContext.setAttribute("greeting_user", postings.get(i).getUser());	
-				pageContext.setAttribute("greeting_date", postings.get(i).getDate());
-				i++;
+
 				
 	%>
 
@@ -140,11 +132,7 @@ if (user != null) {
 	%>
 
 		</ul>
-		
-		<a href="/allposts.jsp">See All Posts</a>
-		<!-- <p align="center">See All Posts</p> -->
-		
-		
+
 		<div class="separate"></div>
 
     	<div class="footer">
