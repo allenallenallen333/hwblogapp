@@ -40,7 +40,7 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">Blog Title</h1></a>
+	          	<a href="/"><h1 class="cufon">title</h1></a>
 
 	          </td>
 	          <td width="250" class="description">
@@ -62,29 +62,29 @@
 		<% 
 		if (user != null) {
 		%>
-		<ul  class="posts">
-		<li class="post" style="min-height: 104px">
+			<ul  class="posts">
+			<li class="post" style="min-height: 104px">
 				<form action="/sign" method="post">
+			
+				  <div>
+				  
+				  <textarea name="title" placeholder="Post Title" rows="1" cols="50"></textarea> 
+				  <br> <br>
+			      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="50"></textarea>
+			
+			      <input type="submit" value="Submit" />
+			      
+			      </div>
+			
+			    </form>
+			    </li>
+			</ul>
+	
+			<div class="separate"></div>
 		
-			  <div>
-			  
-			  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
-			  <br> <br>
-		      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
-		
-		      <input type="submit" value="Submit" />
-		      
-		      </div>
-		
-		    </form>
-		    </li>
-		</ul>
-
-		<div class="separate"></div>
-		
-<%
-} 
-%>
+		<%
+		} 
+		%>
 		
 		<ul class="posts">
 
