@@ -1,57 +1,213 @@
-<<<<<<< HEAD
+  body {
+    height: 100%;
+    color: #454545;
+    font-size: 14px;
+    line-height: 21px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: url(gardenBG.png);
+    -webkit-text-stroke: 1px transparent;
+  }
 
-/* main body appearance */
-=======
->>>>>>> branch 'master' of https://github.com/allenallenallen333/hwblogapp.git
-body {
-	background: #e5e5e5;
-	color: #232323;
-}
+  a {
+    color: #238db1;
+    text-decoration: none;
+  }
+
+  *:active,*:focus { outline: 0px; }
+  a img { border-width: 0px; }
+
+  p {
+    margin: 0 0 14px 0;
+  }
+  
+  em { font-style: italic; }
+  strong { font-weight: bold; }
+
+  blockquote {
+    border-left: 4px solid #EFEFEF;
+    margin: 0 0 14px 0;
+    padding: 0 0 0 15px;
+  }
+
+  a.postbtn, a.btn {
+  	padding: 5px;
+  	background: #3bb0e7;
+  	color: #fff;
+  	border: 2px solid #fff;
+  	border-radius: 10px;
+  	text-align: center;
+  }
+
+  a.postbtn {
+  	position: fixed;
+  	bottom: 20px;
+  	right: 20px;
+  }
+
+  a.postbtn: hover , a.btn: hover{
+  	background: #aff98f;
+  }
+
+  #container {
+    width: 500px;
+    height: 100%;
+    background: url(container-bg.png) repeat-y;
+    margin: auto;
+    padding: 50px 45px;
+    position: relative;
+  }
+
+    #container .header {
+      overflow: hidden;
+    }
+
+      #container .header h1 {
+        font-size: 72px;
+        letter-spacing: -1px;
+        font-family: Cufon;
+        float: left;
+      }
+
+        #container .header a h1 {
+          color: #454545;
+          text-decoration: none;
+        }
+
+      #container .header td.description {
+        width: 240px;
+        font-size: 10px;
+        line-height: 14px;
+        text-align: right;
+        margin: 33px 0 0 0;
+        float: right;
+      }
+
+    #container .separate {
+      width: 570px;
+      height: 8px;
+      background: #EFEFEF;
+      margin: 50px 0 50px -35px;
+    }
+
+    #container .postinfo {
+    	text-align: right;
+    	width: 100%;
+    	border: 0px 2px dotted #f0f0f0;
+    }
+
+    #container ul.posts {
+
+    }
+
+      #container li.post {
+        min-height: 57px;
+        list-style-type: none;
+        margin: 0 0 80px 0;
+        position: relative;
+      }
+
+        li.post .label {
+          width: 57px;
+          font-size: 12px;
+          font-weight: bold;
+          line-height: 0px;
+          text-align: center;
+          text-transform: uppercase;
+          text-decoration: none;
+          position: absolute;
+          display: block;
+          position: absolute;
+          left: -79px;
+          display: block;
+        }
+
+        #container li.post img {
+          max-width: 100%;
+        }
+
+         #container li.post .caption {}
+
+          #container li.post .caption a {
+            padding: 1px;
+          }
+
+            #container li.post .caption a:hover,
+            #container .header .description a:hover,
+            .footer .credit a:hover,
+            ul#likes a:hover {
+              background: #e5f8ff;
+            }
+
+          #container li.post .caption ol,
+          #container li.post .caption ul {
+            margin: 0 0 14px 20px;
+          }
 
 
-/* link appearances */
-a {
-	
-}
 
-a:hover {
-	
-}
+        #container li.post a.title {
+          font-size: 24px;
+          line-height: 26px;
+          margin: 0 0 14px 0;
+          display: block;
+        }
+        
+          #container li.post a.title:hover {
+            text-decoration: underline;
+          }
 
-a:visited {
+          #container li.post a.title.link {
+            color: #6db123;
+            text-decoration: underline;
+            padding: 0 45px 0 0;
+            position: relative;
+          }
 
-}
+            #container li.post a.title.link:hover span {
+              background: #f1fae7;
+            }
 
 
-/* text formatting  */
 
-b {
+    .footer {
+      overflow: hidden;
+    }
 
-}
+      .pagination {
+        width: 148px;
+        height: 67px;
+        background: url(sprite-pagination.png) top left;
+        float: right;
+        overflow: hidden;
+      }
 
-i {
+        a.button {
+          width: 67px;
+          height: 67px;
+          background: url(sprite-pagination.png);
+          display: block;
+        }
 
-}
+          a.button.left {
+            background-position: 0px -67px;
+            float: left;
+          }
+            a.button.left:active { background-position: -0px -134px; }
 
-s {
+          a.button.right {
+            background-position: -81px -67px;
+            float: right;
+          }
+            a.button.right:active { background-position: -81px -134px; }
 
-}
-
-u {
-
-}
-
-/* headers */
-
-h1 { /* used for blog title */
-
-}
-
-h2 { /* used for post titles */
-
-}
-
-h3 { /* used for post sub titles */
-
-}
-
+      .footer .box {
+        height: 50px;
+        font-size: 11px;
+        line-height: 17px;
+        border-radius: 10px;
+          -moz-border-radius: 10px;
+          -webkit-border-radius: 10px;
+        border: 3px solid #efefef;
+        float: left;
+        padding: 7px 17px;
+      }

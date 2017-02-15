@@ -14,126 +14,108 @@
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
  </head>
   <body>
-<%
+  
+	<div id="container">
 
-    UserService userService = UserServiceFactory.getUserService();
+		<div class="header">
 
-    User user = userService.getCurrentUser();
+		<%
+   			UserService userService = UserServiceFactory.getUserService();
+   		 	User user = userService.getCurrentUser();
 
-    if (user != null) {
+   		 	if (user != null) {
+		%>
+			<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
+			<a href="/newpost" class="postbtn">+Post</a>
+		<%
+    		} else {
+		%>
+			<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">{ sign in to post }</a>
+		<%
+		    }
+		%>
 
-      pageContext.setAttribute("user", user);
+	      <table width="500">
+	        <tr valign="baseline">	          
+	          <td width="250">
+	          
+	          	<a href="/"><h1 class="cufon">Blog Title</h1></a>
 
-%>
+	          </td>
+	          <td width="250" class="description">
 
-<p>Hello, ${fn:escapeXml(user.nickname)}! (You can
+	         	 <p>A description of the blog</p>
 
-<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">sign out</a>.)</p>
+	          </td>
+	        </tr>
+     	 </table>    
+      
+      		<div style="margin-top: 20px">
+          
+          		<a href="/subscribe">Subscribe</a>&nbsp;&nbsp;
+          
+      		</div>
+		</div>
 
-<%
+		<div class="separate"></div>
 
-    } else {
+		<ul class="posts">
 
-%>
+	<%
+		ObjectifyService.register(Posting.class);
+		List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
+		Collections.sort(postings); 
 
-<p>Hello!
-
-<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">Sign in</a>
-
-to create your blog post.</p>
-
-<%
-
-    }
-
-%>
-
-
-<%
- if (user != null) {
- 
- 	%>
- 	<form action="/sign" method="post">
-
-	  <div><textarea name="title" rows="1" cols="60"></textarea></div>
-      <div><textarea name="content" rows="3" cols="60"></textarea></div>
-
-      <div><input type="submit" value="Post it!" /></div>
-
-    </form>
-    <%
-}
-%>
- 
-
-<%
-ObjectifyService.register(Posting.class);
-
-List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
-
-Collections.sort(postings); 
-
-if (postings.isEmpty()) {
-
-    %>
-
-    <p>This blog has no posts.</p>
-
-    <%
-
-} else {
-
-    %>
-
-    <p>Available blog posts.</p>
-
-    <%
-
-    for (Posting posting : postings) {
-
-    	pageContext.setAttribute("greeting_title", posting.getTitle());
+		if (postings.isEmpty()) {
+	%>
+	
+    	<p align="center">This blog has no posts.</p>
     	
-    	
-        pageContext.setAttribute("greeting_content", posting.getContent());
+	<%
+		} else {
+		    for (Posting posting : postings) {
+		        pageContext.setAttribute("greeting_content", posting.getContent());
+				pageContext.setAttribute("greeting_user", posting.getUser());	
+	%>
 
-        if (posting.getUser() == null) {
+			<li class="post" style="min-height: 104px">
+				<a href="#" class="title"><span> ${fn:escapeXml(greeting_title)} </span></a>
 
-            %>
+		        <div class="caption">
+		          	<p>
+		          	${fn:escapeXml(greeting_content)}
+					</p>
+				</div>
 
-            <p>An anonymous person wrote:</p>
+				<div class="postinfo">
+					Posted by <b>${fn:escapeXml(greeting_user.nickname)} </b> at <___timestamp___>
+				</div>
 
-            <%
+			</li>
 
-        } else {
+	<%
+    			}
+    	}
+	%>
 
-            pageContext.setAttribute("greeting_user", posting.getUser());
+		</ul>
 
-            %>
+		<div class="separate"></div>
 
-            <p><b>${fn:escapeXml(greeting_user.nickname)}</b> wrote:</p>
+    	<div class="footer">
+     		<div class="pagination">
 
-            <%
+     	<%
+     	 // some code to determine next/previous buttons
+     	%>	
 
-        }
+     		</div>
 
-        %>
-
-		<blockquote>${fn:escapeXml(greeting_title)}</blockquote>
-        <blockquote>${fn:escapeXml(greeting_content)}</blockquote>
-
-        <%
-
-    }
-
-}
-
-%>
-    
-
- 
+     		<div class="credit">
+     			Blog by: <br>
+     			Katya Malyavina <br>
+     			Allen Yang
+     		</div>
 
   </body>
-
-</html>
-
- 
+ </html>
