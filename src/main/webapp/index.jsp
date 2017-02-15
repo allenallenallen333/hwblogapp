@@ -65,6 +65,7 @@
 		ObjectifyService.register(Posting.class);
 		List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
 		Collections.sort(postings); 
+		Collections.reverse(postings);
 
 		if (postings.isEmpty()) {
 	%>
