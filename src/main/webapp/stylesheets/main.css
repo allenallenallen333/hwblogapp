@@ -50,8 +50,8 @@
 
   #container {
     width: 500px;
-    height: 100%;
-    background: url(container-bg.png) repeat-y;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .6);
     margin: auto;
     padding: 50px 45px;
     position: relative;
