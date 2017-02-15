@@ -68,9 +68,9 @@ if (user != null) {
 
 	  <div>
 	  
-	  <textarea name="title" placeholder="Post Title" rows="1" cols="60"></textarea> 
+	  <textarea name="title" placeholder="Post Title" rows="1" cols="50"></textarea> 
 	  <br> <br>
-      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="60"></textarea>
+      <textarea name="content" placeholder="Share your thoughts..." rows="10" cols="50"></textarea>
 
       <input type="submit" value="Submit" />
       
