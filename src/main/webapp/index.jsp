@@ -14,7 +14,7 @@
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
  </head>
   <body>
-  
+
 	<div id="container">
 
 		<div class="header">
@@ -162,6 +162,6 @@
      			Allen Yang
      		</div>
 </div>
-</div>
+		</div>
   </body>
  </html>
