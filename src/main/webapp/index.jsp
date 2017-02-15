@@ -75,6 +75,7 @@
 	<%
 		} else {
 		    for (Posting posting : postings) {
+		    	pageContext.setAttribute("greeting_title", posting.getTitle());
 		        pageContext.setAttribute("greeting_content", posting.getContent());
 				pageContext.setAttribute("greeting_user", posting.getUser());	
 				pageContext.setAttribute("greeting_date", posting.getDate());
