@@ -36,6 +36,9 @@ public class Posting implements Comparable<Posting> {
         return content;
     }
     
+    public String getDate(){
+    	return date.toString();
+    }
     
     @Override
     public int compareTo(Posting other) {

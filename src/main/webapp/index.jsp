@@ -76,6 +76,7 @@
 		    for (Posting posting : postings) {
 		        pageContext.setAttribute("greeting_content", posting.getContent());
 				pageContext.setAttribute("greeting_user", posting.getUser());	
+				pageContext.setAttribute("greeting_date", posting.getDate());
 	%>
 
 			<li class="post" style="min-height: 104px">
@@ -88,7 +89,7 @@
 				</div>
 
 				<div class="postinfo">
-					Posted by <b>${fn:escapeXml(greeting_user.nickname)} </b> at <___timestamp___>
+					Posted by <b>${fn:escapeXml(greeting_user.nickname)} </b> at ${fn:escapeXml(greeting_date)}
 				</div>
 
 			</li>
