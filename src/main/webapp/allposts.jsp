@@ -53,7 +53,7 @@
       
       		<div style="margin-top: 20px">
           
-          		<a href="/subscribe">Subscribe</a>&nbsp;&nbsp;
+          		<a href="/subscription.jsp">Subscribe</a>&nbsp;&nbsp;
           
       		</div>
 		</div>
