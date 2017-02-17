@@ -80,7 +80,7 @@ public class SubscribeServlet extends HttpServlet {
 			List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
 			
 	      for(Subscription email : emails){
-		     // msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email, "Subscriber"));	    	  
+		     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
 	      }
 	      
 	      msg.setText(msgBody);
