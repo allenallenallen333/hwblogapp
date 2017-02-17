@@ -5,5 +5,5 @@ project.bucket.overrideDefault=false
 project.id=hwblogapp
 project.previousVersion.stop=true
 project.promote=true
-project.version=
+project.version=2
 project.version.overrideDefault=false
