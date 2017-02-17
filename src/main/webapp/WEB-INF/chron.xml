@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cronentries>
-  <cron>
-    <url>/chron/subscribe</url>
-    <target>sub</target>
-    <description>Subscribe to blog</description>
-    <schedule>every 24 hours 17:00</schedule>
-  </cron>
-</cronentries>
