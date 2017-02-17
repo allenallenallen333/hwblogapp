@@ -114,7 +114,7 @@
 				pageContext.setAttribute("greeting_title", postings.get(i).getTitle());
 		        pageContext.setAttribute("greeting_content", postings.get(i).getContent());
 				pageContext.setAttribute("greeting_user", postings.get(i).getUser());	
-				pageContext.setAttribute("greeting_date", postings.get(i).getDate());
+				pageContext.setAttribute("greeting_date", postings.get(i).getDate().toString());
 				i++;
 				
 	%>

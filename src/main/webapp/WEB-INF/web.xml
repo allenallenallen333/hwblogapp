@@ -8,12 +8,12 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 <servlet>
-<servlet-name>SubscribeServlet</servlet-name>
-<servlet-class>blog.SubscribeServlet</servlet-class>
+	<servlet-name>SubscribeServlet</servlet-name>
+	<servlet-class>blog.SubscribeServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>SubscribeServlet</servlet-name>
-<url-pattern>/cron/subscribe</url-pattern>
+	<servlet-name>SubscribeServlet</servlet-name>
+	<url-pattern>/cron/subscribe</url-pattern>
 </servlet-mapping>
 
   <servlet>
