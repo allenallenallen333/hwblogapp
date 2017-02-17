@@ -2,7 +2,9 @@
 <cronentries>
   <cron>
     <url>/cron/subscribe</url>
+    <target>sub</target>
     <description>Subscribe to blog</description>
     <schedule>every day 17:00</schedule>
+    <timezone>America/Texas</timezone>
   </cron>
 </cronentries>

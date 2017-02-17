@@ -109,20 +109,12 @@
 		
 
     	<div class="footer">
-     		<div class="pagination">
-
-     	<%
-     	 // some code to determine next/previous buttons
-     	%>	
-
-     		</div>
-
-     		<div class="credit">
+     	     		<div class="credit">
      			Blog by: <br>
      			Katya Malyavina <br>
      			Allen Yang
      		</div>
-</div>
+		</div>
 		</div>
   </body>
  </html>
