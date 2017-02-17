@@ -4,6 +4,7 @@
     <url>/chron/subscribe</url>
     <target>sub</target>
     <description>Subscribe to blog</description>
-    <schedule>every 24 hours 17:00</schedule>
+    <schedule>every fay 17:00</schedule>
+    <timezone>America/Texas</timezone>
   </cron>
 </cronentries>

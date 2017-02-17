@@ -40,7 +40,7 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">Blog Title</h1></a>
+	          	<a href="/"><h1 class="cufon">title</h1></a>
 
 	          </td>
 	          <td width="250" class="description">

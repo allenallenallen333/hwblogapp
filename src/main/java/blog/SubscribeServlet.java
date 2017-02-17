@@ -5,26 +5,13 @@ import static com.googlecode.objectify.ObjectifyService.ofy;
 import java.io.IOException;
 import java.util.Properties;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 // [END simple_includes]
 
-// [START multipart_includes]
-import java.io.InputStream;
-import java.io.ByteArrayInputStream;
-import java.io.UnsupportedEncodingException;
-import javax.activation.DataHandler;
-import javax.mail.Multipart;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMultipart;
-// [END multipart_includes]
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
@@ -45,6 +32,8 @@ public class SubscribeServlet extends HttpServlet {
 	try {
 	_logger.info("Cron Job has been executed");
 
+	
+	// makes the emails
 		final long DAY = 24 * 60 * 60 * 1000;
 		
 		Properties props = new Properties();
@@ -68,9 +57,7 @@ public class SubscribeServlet extends HttpServlet {
 			i++;
 		}
 	    
-	    	    
-	    
-	    
+	    	     
 	    try {
 	      Message msg = new MimeMessage(session);
 	      msg.setFrom(new InternetAddress("admin@hwblog.com", "hwblog.com Admin"));
