@@ -141,27 +141,17 @@
 
 		</ul>
 		
-		<a href="/allposts.jsp">See All Posts</a>
-		<!-- <p align="center">See All Posts</p> -->
 		
 		
 		<div class="separate"></div>
 
     	<div class="footer">
-     		<div class="pagination">
-
-     	<%
-     	 // some code to determine next/previous buttons
-     	%>	
-
-     		</div>
-
-     		<div class="credit">
-     			Blog by: <br>
-     			Katya Malyavina <br>
-     			Allen Yang
-     		</div>
-</div>
+			<div align=center>
+		
+				<a href="/allposts.jsp">See All Posts</a>
+		
+			</div>
+		</div>
 		</div>
   </body>
  </html>

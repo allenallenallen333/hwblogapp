@@ -44,8 +44,7 @@ public class SubscribeServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 	try {
 	_logger.info("Cron Job has been executed");
-	//Put your logic here
-	//BEGIN
+
 		final long DAY = 24 * 60 * 60 * 1000;
 		
 		Properties props = new Properties();
@@ -88,7 +87,6 @@ public class SubscribeServlet extends HttpServlet {
 	      msg.setSubject("Blog: Daily Digest");
 	      Transport.send(msg);
 	    } catch (Exception e) {}
-	//END
 	}
 	catch (Exception e) {
 	//Log any exceptions in your Cron Job

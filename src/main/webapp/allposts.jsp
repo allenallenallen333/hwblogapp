@@ -136,13 +136,6 @@ if (user != null) {
 		<div class="separate"></div>
 
     	<div class="footer">
-     		<div class="pagination">
-
-     	<%
-     	 // some code to determine next/previous buttons
-     	%>	
-
-     		</div>
 
      		<div class="credit">
      			Blog by: <br>
