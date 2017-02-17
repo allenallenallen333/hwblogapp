@@ -28,60 +28,58 @@ public class SubscribeServlet extends HttpServlet {
     }
 	
 	private static final Logger _logger = Logger.getLogger(SubscribeServlet.class.getName());
+	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-	try {
-	_logger.info("Cron Job has been executed");
+		
+		_logger.info("SubscribeServlet Cron Job has been executed");
+		
+		// makes the emails
+				final long DAY = 24 * 60 * 60 * 1000;
+				
+				Properties props = new Properties();
+			    Session session = Session.getDefaultInstance(props, null);
+			    
+				ObjectifyService.register(Posting.class);
+				List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
+				Collections.sort(postings); 
+				Collections.reverse(postings);
+
+			    String msgBody = "Hello! You are subscribed to hwblog's daily digest to receive news of blog posts within the last 24 hours. \n ";
+
+				int i = 0;
+				long now = System.currentTimeMillis();
+				while(i < postings.size() && postings.get(i).getDate().getTime() > now - DAY){
+					
+					msgBody += " \n ------ \n \n Posted by " + postings.get(i).getUser() + " at " + postings.get(i).getDate().toString() + ": \n";
+					msgBody += "Title: " + postings.get(i).getTitle() + "\n";
+					msgBody += postings.get(i).getContent() + "\n";
+					
+					i++;
+				}
+			    
+				if (i >= 1){
+					try {
+					      Message msg = new MimeMessage(session);
+					      msg.setFrom(new InternetAddress("allenallenallen333@gmail.com"));
+					      
+							ObjectifyService.register(Subscription.class);
+							List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
+							
+					      for(Subscription email : emails){
+						     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
+					      }
+					      
+					      msg.setText(msgBody);
+
+					      msg.setSubject("Blog: Daily Digest");
+					      Transport.send(msg);
+					    } catch (Exception e) {}
+				}
+			    	     
+			    
+	}
 
 	
-	// makes the emails
-		final long DAY = 24 * 60 * 60 * 1000;
-		
-		Properties props = new Properties();
-	    Session session = Session.getDefaultInstance(props, null);
-	    
-		ObjectifyService.register(Posting.class);
-		List<Posting> postings = ObjectifyService.ofy().load().type(Posting.class).list();   
-		Collections.sort(postings); 
-		Collections.reverse(postings);
-
-	    String msgBody = "Hello! You are subscribed to hwblog's daily digest to receive news of blog posts within the last 24 hours. \n ";
-
-		int i = 0;
-		long now = System.currentTimeMillis();
-		while(postings.get(i).getDate().getTime() > now - DAY){
-			
-			msgBody += " \n ------ \n \n Posted by " + postings.get(i).getUser() + " at " + postings.get(i).getDate().toString() + ": \n";
-			msgBody += "Title: " + postings.get(i).getTitle() + "\n";
-			msgBody += postings.get(i).getContent() + "\n";
-			
-			i++;
-		}
-	    
-		if (i >= 1){
-			try {
-			      Message msg = new MimeMessage(session);
-			      msg.setFrom(new InternetAddress("allenallenallen333@gmail.com"));
-			      
-					ObjectifyService.register(Subscription.class);
-					List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
-					
-			      for(Subscription email : emails){
-				     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
-			      }
-			      
-			      msg.setText(msgBody);
-
-			      msg.setSubject("Blog: Daily Digest");
-			      Transport.send(msg);
-			    } catch (Exception e) {}
-		}
-	    	     
-	    
-	}
-	catch (Exception e) {
-	//Log any exceptions in your Cron Job
-	}
-	}
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 	throws ServletException, IOException {
