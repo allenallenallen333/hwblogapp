@@ -11,6 +11,7 @@
 
 <html>
   <head>
+    <title>all the posts!! ⚞^✧ᆺ✧^⚟</title>
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
  </head>
   <body>
@@ -40,7 +41,7 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">meow mix</h1></a>
+	          	<a href="/"><h1 class="cufon">meow</h1></a>
 
 	          </td>
 	          <td width="250" class="description">
@@ -53,7 +54,7 @@
       
       		<div style="margin-top: 20px">
           
-          		<a href="/subscription.jsp">Subscribe</a>&nbsp;&nbsp;
+          		<a href="/subscription.jsp">Subscribe ♡ </a>&nbsp;&nbsp;
           
       		</div>
 		</div>
@@ -95,11 +96,7 @@ if (user != null) {
 			
 		}
 		
-		%>
-		
-		
-		
-		
+		%>	
 <%
 } 
 %>

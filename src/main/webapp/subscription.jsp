@@ -11,6 +11,7 @@
 
 <html>
   <head>
+   <title>subscribe! meow!! ⚞^✧ᆺ✧^⚟</title>
    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
  </head>
   <body>
@@ -39,7 +40,7 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">meow mix</h1></a>
+	          	<a href="/"><h1 class="cufon">meow</h1></a>
 
 	          </td>
 	          <td width="250" class="description">
@@ -52,21 +53,26 @@
       
       		<div style="margin-top: 20px">
           
-          		<a href="/subscription.jsp">Subscribe</a>&nbsp;&nbsp;
+          		<a href="/subscription.jsp">Subscribe ♡</a>&nbsp;&nbsp;
           
       		</div>
 		</div>
 		<div class="separate"></div>
+      		<div align="center">		
+		<div> If you would like to receive a daily email containing the latest blog posts, enter your email to subscribe! <br><br>
+		
+		  	⚞^✧ᆺ✧^⚟ <br><br>
+		</div>
 
 		<form action="/subs" method="post">
 
-      		<div align="center">
-      
-      		<textarea name="email" rows="1" cols="35"></textarea> <br>
 
-      		<input type="submit" name="button1" value="Subscribe" /> <br>
       
-      		<input type="submit" name="button2" value="Unsubscribe" />
+      		<input type="text" name="email"  placeholder="Email" rows="1" cols="25"></input> <br> <br>
+
+      		<input type="submit" class="button button1" value="Subscribe" /> <br>
+      
+      		<input type="submit" class="button button2" value="Unsubscribe" />
       		
       		</div>
 
