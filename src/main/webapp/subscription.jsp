@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.google.appengine.api.users.User" %>
-<%@ page import="blog.Posting" %>
+<%@ page import="blog.Subscription" %>
 <%@ page import="java.util.Collections" %>
 <%@ page import="com.googlecode.objectify.*" %>
 <%@ page import="com.google.appengine.api.users.UserService" %>
@@ -26,8 +26,10 @@
    		 	if (user != null) {
 		%>
 			<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
-			<!--<a href="/newpost" class="postbtn">+Post</a> -->			
-			
+			<!--<a href="/newpost" class="postbtn">+Post</a> -->	
+			<% 
+			pageContext.setAttribute("greeting_user", user.getEmail());	
+			%>	
 		<%
     		} else {
 		%>
@@ -63,14 +65,51 @@
 
       <div><textarea name="email" rows="1" cols="60"></textarea></div>
 
-      <div><input type="submit" value="Subscribe" /></div>
+      <div><input type="submit" name="button1" value="Subscribe" /></div>
       
-      <div><input type="submit" value="Unsubscribe" /></div>
+      <div><input type="submit" name="button2" value="Unsubscribe" /></div>
 
     </form>
 		
-		
 		<div class="separate"></div>
+		
+		<%
+		
+		if (user != null && user.getEmail().equals("allenallenallen333@gmail.com")) {
+		
+		ObjectifyService.register(Subscription.class);
+		List<Subscription> subs = ObjectifyService.ofy().load().type(Subscription.class).list();   
+		
+
+		if (subs.isEmpty()) {
+	%>
+	
+    	<p align="center">This subscription has no emails.</p>
+    	
+	<%
+		} else {
+
+		    for (Subscription sub : subs) {
+		    	pageContext.setAttribute("greeting_email", sub.getEmail());
+	
+	%>
+
+			<li class="post" style="max-height: 12px">
+				<a href="#" class="email"><span> ${fn:escapeXml(greeting_email)} </span></a>
+			</li>
+
+	<%
+    			}
+		    
+		    
+    	}
+		%>
+	    <div class="separate"></div>
+	    <%
+		}
+	%>
+		
+		
 
     	<div class="footer">
      		<div class="pagination">
