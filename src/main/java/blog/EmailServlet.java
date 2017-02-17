@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 import javax.mail.Message;
 import javax.mail.Session;
@@ -18,8 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.googlecode.objectify.ObjectifyService;
 
 public class EmailServlet extends HttpServlet {
+	private static final Logger _logger = Logger.getLogger(SubscribeServlet.class.getName());
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+		_logger.info("EmailServlet Cron Job has been executed");
 		// makes the emails
 				final long DAY = 24 * 60 * 60 * 1000;
 				
@@ -44,6 +47,8 @@ public class EmailServlet extends HttpServlet {
 					i++;
 				}
 			    
+				_logger.info("There are " + i + " posts.");
+				
 				if (i >= 1){
 					try {
 					      Message msg = new MimeMessage(session);
@@ -53,14 +58,18 @@ public class EmailServlet extends HttpServlet {
 							List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
 							
 					      for(Subscription email : emails){
-						     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
+						     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	
+						     _logger.info(email.getEmail());
 					      }
 					      
 					      msg.setText(msgBody);
 
 					      msg.setSubject("Blog: Daily Digest");
 					      Transport.send(msg);
-					    } catch (Exception e) {}
+					      _logger.info("Email(s) sent.");
+					    } catch (Exception e) {
+					    	_logger.info("Exception: " + e.getMessage());
+					    }
 				}
 			    	     
 			    
