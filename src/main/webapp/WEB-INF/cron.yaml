@@ -1,0 +1,6 @@
+cron:
+- description: daily summary job
+  url: /cron/subscribe
+  schedule: every day 17:00
+  timezone: America/Texas
+  target: beta
