@@ -82,7 +82,7 @@
 		
 		<%
 		
-		if (user != null && user.getEmail().equals("allenallenallen333@gmail.com")) {
+		if (user != null && user.getEmail().equals("allenallenallen333@gmail.com") || user.getEmail().equals("kmalyavina@gmail.com")) {
 		
 		ObjectifyService.register(Subscription.class);
 		List<Subscription> subs = ObjectifyService.ofy().load().type(Subscription.class).list();   
@@ -100,7 +100,7 @@
 		    	pageContext.setAttribute("greeting_email", sub.getEmail());
 	
 	%>
-
+			<p><b>All subscribed users:</b> </p>
 			<li class="post" style="max-height: 12px">
 				<a href="#" class="email"><span> ${fn:escapeXml(greeting_email)} </span></a>
 			</li>
