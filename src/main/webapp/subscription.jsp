@@ -27,7 +27,7 @@
    		 	if (user != null) {
 		%>
 			<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
-			<!--<a href="/newpost" class="postbtn">+Post</a> -->	
+		
 		<%
     		} else {
 		%>
