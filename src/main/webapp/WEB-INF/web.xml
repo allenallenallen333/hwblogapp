@@ -13,9 +13,16 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>SubscribeServlet</servlet-name>
+	<url-pattern>/subs</url-pattern>
+</servlet-mapping>
+<servlet>
+	<servlet-name>EmailServlet</servlet-name>
+	<servlet-class>blog.EmailServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>EmailServlet</servlet-name>
 	<url-pattern>/cron/subscribe</url-pattern>
 </servlet-mapping>
-
   <servlet>
   	<servlet-name>sign</servlet-name>
   	<servlet-class>blog.SignBlogServlet</servlet-class>

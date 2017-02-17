@@ -57,23 +57,26 @@ public class SubscribeServlet extends HttpServlet {
 			i++;
 		}
 	    
-	    	     
-	    try {
-	      Message msg = new MimeMessage(session);
-	      msg.setFrom(new InternetAddress("admin@hwblog.com", "hwblog.com Admin"));
-	      
-			ObjectifyService.register(Subscription.class);
-			List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
-			
-	      for(Subscription email : emails){
-		     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
-	      }
-	      
-	      msg.setText(msgBody);
+		if (i >= 1){
+			try {
+			      Message msg = new MimeMessage(session);
+			      msg.setFrom(new InternetAddress("allenallenallen333@gmail.com"));
+			      
+					ObjectifyService.register(Subscription.class);
+					List<Subscription> emails = ObjectifyService.ofy().load().type(Subscription.class).list();   
+					
+			      for(Subscription email : emails){
+				     msg.addRecipient(Message.RecipientType.TO, new InternetAddress(email.getEmail(), "Subscriber"));	    	  
+			      }
+			      
+			      msg.setText(msgBody);
 
-	      msg.setSubject("Blog: Daily Digest");
-	      Transport.send(msg);
-	    } catch (Exception e) {}
+			      msg.setSubject("Blog: Daily Digest");
+			      Transport.send(msg);
+			    } catch (Exception e) {}
+		}
+	    	     
+	    
 	}
 	catch (Exception e) {
 	//Log any exceptions in your Cron Job

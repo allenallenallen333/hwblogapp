@@ -58,7 +58,7 @@
 		</div>
 		<div class="separate"></div>
 
-		<form action="/cron/subscribe" method="post">
+		<form action="/subs" method="post">
 
       <div><textarea name="email" rows="1" cols="60"></textarea></div>
 
