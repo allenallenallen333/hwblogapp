@@ -39,12 +39,12 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">title</h1></a>
+	          	<a href="/"><h1 class="cufon">meow mix</h1></a>
 
 	          </td>
 	          <td width="250" class="description">
 
-	         	 <p>A description of the blog</p>
+	         	 <p><img src="https://s-media-cache-ak0.pinimg.com/originals/31/f1/7d/31f17d37aad1b028590bb5ea0ba6df20.jpg"></p>
 
 	          </td>
 	        </tr>
@@ -60,13 +60,17 @@
 
 		<form action="/subs" method="post">
 
-      <div><textarea name="email" rows="1" cols="60"></textarea></div>
-
-      <div><input type="submit" name="button1" value="Subscribe" /></div>
+      		<div align="center">
       
-      <div><input type="submit" name="button2" value="Unsubscribe" /></div>
+      		<textarea name="email" rows="1" cols="35"></textarea> <br>
 
-    </form>
+      		<input type="submit" name="button1" value="Subscribe" /> <br>
+      
+      		<input type="submit" name="button2" value="Unsubscribe" />
+      		
+      		</div>
+
+    	</form>
 		
 		<div class="separate"></div>
 		

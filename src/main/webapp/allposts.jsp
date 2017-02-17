@@ -40,12 +40,12 @@
 	        <tr valign="baseline">	          
 	          <td width="250">
 	          
-	          	<a href="/"><h1 class="cufon">title</h1></a>
+	          	<a href="/"><h1 class="cufon">meow mix</h1></a>
 
 	          </td>
 	          <td width="250" class="description">
 
-	         	 <p>A description of the blog</p>
+	         	 <p><img src="https://s-media-cache-ak0.pinimg.com/originals/31/f1/7d/31f17d37aad1b028590bb5ea0ba6df20.jpg"></p>
 
 	          </td>
 	        </tr>
