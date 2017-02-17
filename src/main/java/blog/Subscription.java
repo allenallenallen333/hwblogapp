@@ -20,4 +20,5 @@ public class Subscription {
     public String getEmail(){
     	return email;
     }
+
 }

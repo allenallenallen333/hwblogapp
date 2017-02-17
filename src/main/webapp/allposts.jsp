@@ -124,7 +124,7 @@ if (user != null) {
 		    	pageContext.setAttribute("greeting_title", posting.getTitle());
 		        pageContext.setAttribute("greeting_content", posting.getContent());
 				pageContext.setAttribute("greeting_user", posting.getUser());	
-				pageContext.setAttribute("greeting_date", posting.getDate());
+				pageContext.setAttribute("greeting_date", posting.getDate().toString());
 
 				
 	%>
@@ -154,13 +154,6 @@ if (user != null) {
 		<div class="separate"></div>
 
     	<div class="footer">
-     		<div class="pagination">
-
-     	<%
-     	 // some code to determine next/previous buttons
-     	%>	
-
-     		</div>
 
      		<div class="credit">
      			Blog by: <br>
