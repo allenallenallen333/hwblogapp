@@ -82,6 +82,24 @@ if (user != null) {
 
 		<div class="separate"></div>
 		
+		<%
+		
+		if (user.getEmail().equals("allenallenallen333@gmail.com")){
+			
+			%>
+			<form action="/sign" method="post">
+			<div><input type="submit" action="/sign" name="del" value="Delete All Posts" /></div>
+			</form>
+			<div class="separate"></div>
+			<% 
+			
+		}
+		
+		%>
+		
+		
+		
+		
 <%
 } 
 %>
