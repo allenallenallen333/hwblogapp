@@ -51,9 +51,7 @@
 	        </tr>
      	 </table>    
       
-      		<div style="margin-top: 20px">
-          
-          		<a href="/subscription.jsp">Subscribe ♡</a>&nbsp;&nbsp;
+      		<div style="margin-top: 20px">          		
           
       		</div>
 		</div>
@@ -82,7 +80,7 @@
 		
 		<%
 		
-		if (user != null && user.getEmail().equals("allenallenallen333@gmail.com") || user.getEmail().equals("kmalyavina@gmail.com")) {
+		if (user != null && (user.getEmail().equals("allenallenallen333@gmail.com") || user.getEmail().equals("kmalyavina@gmail.com"))) {
 		
 		ObjectifyService.register(Subscription.class);
 		List<Subscription> subs = ObjectifyService.ofy().load().type(Subscription.class).list();   

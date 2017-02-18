@@ -20,23 +20,6 @@
 
 		<div class="header">
 
-		<%
-   			UserService userService = UserServiceFactory.getUserService();
-   		 	User user = userService.getCurrentUser();
-
-   		 	if (user != null) {
-		%>
-			<a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
-			<!--<a href="/newpost" class="postbtn">+Post</a> -->			
-			
-		<%
-    		} else {
-		%>
-			<a href="<%= userService.createLoginURL(request.getRequestURI()) %>">{ sign in to post }</a>
-		<%
-		    }
-		%>
-
 	      <table width="500">
 	        <tr valign="baseline">	          
 	          <td width="250">
@@ -54,7 +37,21 @@
       
       		<div style="margin-top: 20px">
           
-          		<a href="/subscription.jsp">Subscribe ♡ </a>&nbsp;&nbsp;
+          		<%
+   			UserService userService = UserServiceFactory.getUserService();
+   		 	User user = userService.getCurrentUser();
+
+   		 	if (user != null) {
+		%>
+			<a href="/subscription.jsp">Subscribe </a> ▬ <a href="<%= userService.createLogoutURL(request.getRequestURI()) %>">{ sign out }</a>
+			<!--<a href="/newpost" class="postbtn">+Post</a> -->	
+		<%
+    		} else {
+		%>
+			<a href="/subscription.jsp">Subscribe </a> ▬ <a href="<%= userService.createLoginURL(request.getRequestURI()) %>"> { sign in to post }</a>
+		<%
+		    }
+		%>
           
       		</div>
 		</div>
